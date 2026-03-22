@@ -15,21 +15,11 @@ Running [`/code-review`](https://github.com/anthropics/claude-code/tree/main/.cl
 /sandboxed-code-review owner/repo#123
 ```
 
-The review runs in the background (typically 5-15 minutes). Progress is shown as agents are spawned inside the sandbox. When complete, the review is presented in your terminal:
+The review runs in the background (typically 5-15 minutes). Progress is shown as agents are spawned inside the sandbox. When complete, the review is presented in your terminal.
 
-```
-╭─ Sandboxed Code Review ──────────────────────────────────────
-│
-│  Code review
-│
-│  | # | Issue | Confidence | Source |
-│  |---|-------|-----------|--------|
-│  | 1 | Missing null check in handleAuth() | 85 | Agent 2 |
-│  | 2 | SQL injection risk in query builder | 92 | Agent 1, 3 |
-│  ...
-│
-╰──────────────────────────────────────────────────────────────
-```
+<p align="left">
+  <img src="./assets/terminal.jpg" alt="Sandboxed Code Review" width="100%">
+</p>
 
 You then choose to **post** the review to GitHub, **edit** it first, or **discard** it.
 
@@ -40,6 +30,10 @@ You then choose to **post** the review to GitHub, **edit** it first, or **discar
 ```
 
 In addition to the terminal output, the `--web` flag renders the review as a styled HTML page and opens it in your default browser.
+
+<p align="left">
+  <img src="./assets/web.jpg" alt="Sandboxed Code Review" width="100%">
+</p>
 
 ## Prerequisites
 
@@ -58,7 +52,7 @@ cd ~/.claude
 git clone https://github.com/rsylvian/sandboxed-code-review.git
 
 # Symlink the command so Claude Code discovers it globally
-ln -s sandboxed-code-review/.claude/commands/sandboxed-code-review.md commands/sandboxed-code-review.md
+mkdir -p commands && ln -s ../sandboxed-code-review/.claude/commands/sandboxed-code-review.md commands/sandboxed-code-review.md
 ```
 
 The `/sandboxed-code-review` command is now available globally in any project.
