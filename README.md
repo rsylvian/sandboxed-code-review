@@ -1,4 +1,4 @@
-<p align="center">
+<p align="left">
   <img src="./assets/logo.png" alt="Sandboxed Code Review" height="120">
 </p>
 
@@ -43,10 +43,10 @@ In addition to the terminal output, the `--web` flag renders the review as a sty
 
 ## Prerequisites
 
-- **[Claude Code](https://docs.anthropic.com/en/docs/claude-code)** with the [`/code-review`](https://github.com/anthropics/claude-code/tree/main/.claude/commands/code-review) command installed
-- **[Docker Desktop 4.58+](https://www.docker.com/products/docker-desktop/)**
-- **[GitHub CLI (`gh`)](https://cli.github.com/)** authenticated (`gh auth login`)
-- A valid connection to **Anthropic API** configured in Claude Code (via `~/.claude/settings.json`, or `ANTHROPIC_API_KEY` env var)
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with the [`/code-review`](https://github.com/anthropics/claude-code/tree/main/.claude/commands/code-review) command installed
+- [Docker Desktop 4.58+](https://www.docker.com/products/docker-desktop/)
+- [GitHub CLI (`gh`)](https://cli.github.com/) authenticated (`gh auth login`)
+- A valid connection to **Anthropic API** already configured in Claude Code
 
 ## Install
 
