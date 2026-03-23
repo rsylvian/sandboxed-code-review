@@ -216,10 +216,11 @@ main() {
         die "PR #${PR_NUMBER} is ${pr_state}, not OPEN. Skipping review."
     fi
 
-    # Sandbox name
-    local safe_repo
-    safe_repo=$(echo "$REPO" | tr '/' '-' | tr '[:upper:]' '[:lower:]')
-    local sandbox_name="review-${safe_repo}-${PR_NUMBER}"
+    # Sandbox name — keep it short to avoid Docker socket path limits (> 94 chars).
+    local sandbox_hash
+    sandbox_hash=$(printf '%s' "${REPO}#${PR_NUMBER}" | md5 -q 2>/dev/null || printf '%s' "${REPO}#${PR_NUMBER}" | md5sum | cut -c1-12)
+    sandbox_hash="${sandbox_hash:0:12}"
+    local sandbox_name="review-${sandbox_hash}"
 
     # Remove existing sandbox with the same name
     if docker sandbox ls --format '{{.Name}}' 2>/dev/null | grep -qx "$sandbox_name"; then
