@@ -4,7 +4,7 @@
 
 # Sandboxed Code Review
 
-Running [`/code-review`](https://github.com/anthropics/claude-code/tree/main/.claude/commands/code-review) locally means babysitting permission prompts or running in YOLO mode on your machine.
+Running [`/code-review`](https://github.com/anthropics/claude-code/blob/main/plugins/code-review/README.md) locally means babysitting permission prompts or running in YOLO mode on your machine.
 
 `/sandboxed-code-review` is a solution to this problem. It runs Anthropic's official `/code-review` command in a Docker sandbox fully autonomous **AND** fully isolated. No more permission prompts, no more risks to your local environment!
 
@@ -37,7 +37,7 @@ In addition to the terminal output, the `--web` flag renders the review as a sty
 
 ## Prerequisites
 
-- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with the [`/code-review`](https://github.com/anthropics/claude-code/tree/main/.claude/commands/code-review) command installed
+- [Claude Code](https://docs.anthropic.com/en/docs/claude-code) with the [`/code-review`](https://github.com/anthropics/claude-code/blob/main/plugins/code-review/README.md) command installed
 - [Docker Desktop 4.58+](https://www.docker.com/products/docker-desktop/)
 - [GitHub CLI (`gh`)](https://cli.github.com/) authenticated (`gh auth login`)
 - A valid connection to **Anthropic API** already configured in Claude Code
